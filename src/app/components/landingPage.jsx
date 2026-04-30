@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function LandingPage({ playfair }) {
     return (
-        <div className=" bg-[#f5f2e9] text-wrap flex flex-col min-h-screen justify-center items-center  md:px-20">
+        <div className=" bg-[#f5f2e9] text-wrap flex flex-col min-h-screen justify-center items-center p-6">
 
             <motion.h2
                 className={`${playfair.className} text-4xl md:text-6xl mt-10 font-bold text-green-900`}
@@ -17,7 +17,7 @@ export default function LandingPage({ playfair }) {
             </motion.h2>
 
             <motion.p
-                className="mt-10  text-green-800"
+                className="mt-10 p-3  text-green-800"
                 initial="hidden"
                 animate="visible"
                 variants={{
