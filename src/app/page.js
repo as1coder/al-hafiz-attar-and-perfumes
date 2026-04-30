@@ -7,6 +7,7 @@ import Product from './components/product';
 import About from './components/about';
 import Location from './components/location';
 import Contact from './components/contact';
+import LandingPage from './components/landingPage';
 
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"] });
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title className={`${playfair.className}`}>Al-Hafiz Attar And Perfumes</title>
+        <title className={`${playfair.className}`}>M.T. Attars</title>
       </Head>
 
 
@@ -26,28 +27,11 @@ export default function Home() {
         <ScrollTopButton />
         {/* Navbar */}
         <Navbar playfair={playfair} />
+        
 
         {/* Hero */}
-             <section className="flex flex-col items-center justify-center gap-10 min-h-screen text-center  px-6">
-                   <h2 className={`${playfair.className} text-4xl md:text-6xl font-bold pb-12 mb-4`}>
-                     Not Just a Perfume — It’s an Identity.
-                   </h2>
-         
-                   <p className="text-lg max-w-xl mx-auto mb-6 text-[#034b1d]/80">
-                     Discover luxury attars crafted to leave a lasting impression.
-                   </p>
-         
-                  <a href="#products">
-                     <div className="bg-[#034b1d] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0a6b2e] transition">
-                     Explore Collection
-                      </div>
-                   
-                  </a>
-         
-                   <p className="mt-10 text-sm opacity-70 animate-bounce">
-                     ↓ Scroll Down
-                   </p>
-                 </section>
+        <LandingPage playfair={playfair} />
+             
         {/* Products */}
         <Product playfair={playfair} />
 
@@ -62,7 +46,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center py-6 border-t border-[#034b1d]/20">
           <p className={`${playfair.className} text-[#034b1d]/60`}>
-            © 2026 Al-Hafiz Attar And Perfumes Malegaon Nashik. All rights reserved.
+            © 2026 M.T. Attars Malegaon Nashik. All rights reserved.
           </p>
         </footer>
       </main>

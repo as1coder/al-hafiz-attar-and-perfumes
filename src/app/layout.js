@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Al-Hafiz Attar And Perfumes",
+  title: "M.T. Attars - Premium Attars and Perfumes in Malegaon",
   description:
     "Buy premium attar and perfumes in Malegaon. Long-lasting fragrances like Oud, Rose Essence, and more. Order now via WhatsApp.",
 
@@ -23,7 +23,7 @@ export const metadata = {
     "rose perfume",
     "long lasting attar",
     "attar near me",
-    "Al Hafiz perfumes",
+    "M.T. Attars",
     "premium attar",
     "natural perfumes",
     "fragrance collection",
@@ -34,21 +34,21 @@ export const metadata = {
 
   ],
 
-  authors: [{ name: "Al-Hafiz Attar And Perfumes" }],
-  creator: "Al-Hafiz Attar And Perfumes",
+  authors: [{ name: "M.T. Attars" }],
+  creator: "Rehan Raza",
 
   openGraph: {
-    title: "Al-Hafiz Attar And Perfumes",
+    title: "M.T. Attars - Premium Attars and Perfumes in Malegaon",
     description:
       "Premium quality attars and perfumes. Long-lasting fragrance collection.",
     url: "https://your-domain.com",
-    siteName: "Al-Hafiz Attar And Perfumes",
+    siteName: "M.T. Attars",
     images: [
       {
-        url: "/profile.jpg", // apni best image
+        url: "/about.jpg", // apni best image
         width: 1200,
         height: 630,
-        alt: "Al Hafiz Perfumes",
+        alt: "M.T. Attars - Premium Attars and Perfumes",
       },
     ],
     locale: "en_IN",

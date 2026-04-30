@@ -1,6 +1,8 @@
 "use client"
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Navbar({ playfair }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,38 +13,98 @@ export default function Navbar({ playfair }) {
       <nav className="flex items-center sticky top-0 bg-amber-50 justify-between border-b-2 border-green-800 py-2 px-3">
         
         {/* Logo + Name */}
-        <a href="#" className="flex items-center gap-2">
-        <div className='flex gap-2 items-center'>
+        <motion.a 
+          href="#" 
+          className="flex items-center gap-2"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+        <div className='flex gap-4 items-center'>
           <Image src="/profile.jpg" alt="profile" width={50} height={30} />
           <h1 className={`${playfair.className} text-lg md:text-2xl font-bold`}>
-            Al-Hafiz Attar And Perfumes
+            M.T. Attars
           </h1>
         </div>
-        </a>
+        </motion.a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="#about" className="hover:text-gray-600">About</a>
-          <a href="#products" className="hover:text-gray-600">Products</a>
-          <a href="#contact" className="hover:text-gray-600">Contact</a>
-          <a href="#location" className="hover:text-gray-600">Location</a>
+          <motion.a 
+            href="#about" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            About
+          </motion.a>
+          <motion.a 
+            href="#products" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Products
+          </motion.a>
+          <motion.a 
+            href="#contact" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Contact
+          </motion.a>
+          <motion.a 
+            href="#location" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Location
+          </motion.a>
+          <motion.a 
+            href="/animator" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            Animator
+          </motion.a>
         </div>
 
         {/* Mobile Hamburger */}
-        <button 
+        <motion.button 
           className="md:hidden text-2xl"
           onClick={() => setIsOpen(true)}
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
           ☰
-        </button>
+        </motion.button>
       </nav>
 
       {/* OVERLAY (30% area clickable) */}
       {isOpen && (
-        <div 
+        <motion.div 
           className="fixed inset-0 bg-black/40 z-40"
           onClick={() => setIsOpen(false)}
-        ></div>
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        ></motion.div>
       )}
 
       {/* SIDE MENU (70%) */}
@@ -51,20 +113,64 @@ export default function Navbar({ playfair }) {
 
         {/* Close Button */}
         <div className="flex justify-end p-4">
-          <button 
+          <motion.button 
             className="text-2xl"
             onClick={() => setIsOpen(false)}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             ✕
-          </button>
+          </motion.button>
         </div>
 
         {/* Menu Links */}
         <div className="flex flex-col items-start gap-6 px-6 text-lg">
-          <a href="#about" onClick={() => setIsOpen(false)}>About</a>
-          <a href="#products" onClick={() => setIsOpen(false)}>Products</a>
-          <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
-          <a href="#location" onClick={() => setIsOpen(false)}>Location</a>
+          <motion.a 
+            href="#about" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </motion.a>
+          <motion.a 
+            href="#products" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            onClick={() => setIsOpen(false)}
+          >
+            Products
+          </motion.a>
+          <motion.a 
+            href="#contact" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </motion.a>
+          <motion.a 
+            href="#location" 
+            className="hover:text-gray-600"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onClick={() => setIsOpen(false)}
+          >
+            Location
+          </motion.a>
         </div>
       </div>
     </>

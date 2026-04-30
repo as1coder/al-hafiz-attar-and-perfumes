@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Product({ playfair }) {
@@ -6,15 +7,30 @@ export default function Product({ playfair }) {
     return (
         <>
             {/* Products */}
-        <section id="products" className="py-2 px-6 max-w-6xl mx-auto">
-          <h3 className={`${playfair.className} text-3xl font-bold text-center pb-20 mb-20`}>Our Collection</h3>
+        <section id="products" className="py-2  max-w-6xl mx-auto px-4">
+          <motion.h3 
+            className={`${playfair.className} text-3xl font-bold text-center text-[#034b1d] mb-8`}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Our Collection
+          </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: 'Rose Essence', image: '/eros.jpg', price: '₹199', description: 'A delightful blend of rose petals and vanilla' },
               { name: 'red diamond', image: '/red diamond.jpg', price: '₹499', description: 'Refresh your senses with this invigorating scent' },
               { name: 'oud', image: '/oud.jpg', price: '₹249', description: 'An enchanting fragrance for special occasions' }
             ].map((item, i) => (
-              <div key={i} className="bg-green-50 hover:bg-green-100 p-6  rounded-2xl shadow-lg text-center">
+              <motion.div 
+                key={i} 
+                className="bg-green-50 hover:bg-green-100 p-6  rounded-2xl shadow-lg text-center"
+                initial={{ opacity: 0, y: 20 , }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+              >
                 <Image src={item.image} alt={item.name} width={250} height={200} className="mx-auto rounded-2xl h-96 content-center mb-4" />
                 <h4 className={`${playfair.className} text-xl font-semibold text-[#034b1d]`}>{item.name}</h4>
                 <p className="text-[#034b1d]/70">{item.price}</p>
@@ -24,7 +40,7 @@ export default function Product({ playfair }) {
                    Buy Now
                 </button>
 
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>

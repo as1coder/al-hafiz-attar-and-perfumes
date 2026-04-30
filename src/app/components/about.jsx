@@ -1,14 +1,22 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 export default function About({ playfair }) {
     return (
         <div>
             {/* About */}
             <section id="about" className="py-20 px-6 max-w-6xl mx-auto">
 
-                <div className="grid md:grid-cols-2 gap-10 items-center">
+                <motion.div className="grid md:grid-cols-2 gap-10 items-center">
 
                     {/* LEFT IMAGE */}
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        
+                    >
                         <Image
                             src="/about.jpg"
                             alt="about"
@@ -17,11 +25,16 @@ export default function About({ playfair }) {
                             height={500}
                             loading="lazy"
                         />
-                    </div>
+                    </motion.div>
 
                     {/* RIGHT CONTENT */}
-                    <div className="text-center">
-                        <h3 className={`${playfair.className} text-3xl  md:text-4xl font-bold mb-4`}>
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                        <h3 className={`${playfair.className} text-3xl text-center md:text-4xl font-bold mb-4`}>
                             About Us
                         </h3>
 
@@ -52,8 +65,8 @@ export default function About({ playfair }) {
                             </div>
                         </div>
 
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </section>
         </div>
     );
