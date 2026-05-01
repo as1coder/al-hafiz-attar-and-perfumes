@@ -71,16 +71,7 @@ export default function Navbar({ playfair }) {
           >
             Location
           </motion.a>
-          <motion.a 
-            href="/animator" 
-            className="hover:text-gray-600"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            Animator
-          </motion.a>
+      
         </div>
 
         {/* Mobile Hamburger */}
